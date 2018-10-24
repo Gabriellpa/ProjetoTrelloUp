@@ -1,0 +1,19 @@
+﻿body {
+    background: aliceblue;
+    align-items: center;
+}
+
+#content {
+    background: white;
+    padding: 24px;
+    width: 50%;
+    max-width: 80%;
+    max-height: 90%;
+    text-align: left;
+}
+
+li:hover {
+    background: dodgerblue;
+    color: black;
+    width: 15%;
+}
