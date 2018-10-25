@@ -1,0 +1,11 @@
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\bin\Debug\netcoreapp2.1\Projeto2.deps.json
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\bin\Debug\netcoreapp2.1\Projeto2.runtimeconfig.json
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\bin\Debug\netcoreapp2.1\Projeto2.runtimeconfig.dev.json
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\bin\Debug\netcoreapp2.1\Projeto2.dll
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\bin\Debug\netcoreapp2.1\Projeto2.pdb
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.1\Projeto2.csprojAssemblyReference.cache
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.1\Projeto2.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.1\Projeto2.AssemblyInfoInputs.cache
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.1\Projeto2.AssemblyInfo.cs
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.1\Projeto2.dll
+C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.1\Projeto2.pdb
