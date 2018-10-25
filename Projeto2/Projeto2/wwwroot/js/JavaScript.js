@@ -16,7 +16,7 @@ TrelloPowerUp.initialize({
                         localStorage.setItem('listas', oDados);
                         t.modal({
                             // the url to load for the iframe
-                            url: '/Home/Modal',
+                            url: '/Home/Listas',
                             // optional arguments to be passed to the iframe as query parameters
                             // access later with t.arg('text')
                             args: { text: 'TesteModal' },
