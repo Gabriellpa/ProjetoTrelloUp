@@ -19,4 +19,3 @@ C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\ne
 C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.0\Projeto2.AssemblyInfo.cs
 C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.0\Projeto2.dll
 C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.0\Projeto2.pdb
-C:\Users\Gabriel\Documents\GitHub\ProjetoTrelloUp\Projeto2\Projeto2\obj\Debug\netcoreapp2.0\Projeto2.csprojAssemblyReference.cache

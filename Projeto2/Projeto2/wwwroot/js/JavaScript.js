@@ -1,4 +1,5 @@
-﻿TrelloPowerUp.initialize({
+﻿debugger;
+TrelloPowerUp.initialize({
     //BOARDS  
     'board-buttons': function (t, options) {
         return [{
