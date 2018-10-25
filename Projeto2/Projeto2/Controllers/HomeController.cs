@@ -24,5 +24,12 @@ namespace Projeto2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost]
+        public void DataTrello([FromBody] DadosTrello dados)
+        {
+            //Retornando tudo null;
+            DadosTrello dadosTrello = dados;
+        }
     }
 }

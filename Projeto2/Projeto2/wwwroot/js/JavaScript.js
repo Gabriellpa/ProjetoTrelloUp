@@ -1,5 +1,4 @@
-﻿debugger;
-TrelloPowerUp.initialize({
+﻿TrelloPowerUp.initialize({
     //BOARDS  
     'board-buttons': function (t, options) {
         return [{
@@ -7,12 +6,9 @@ TrelloPowerUp.initialize({
 
             callback: function (t) {
                 return t.lists('all')
-                    .then(function (lists) {
-                        //console.log(JSON.stringify(lists, null, 2));
+					.then(function (lists) {
+
                         let oDados = JSON.stringify(lists, null, 2);
-                        //for (let i = 0; i < oDados.length; i++) {
-                        //	section.push(oDados[i]);
-                        //}
                         localStorage.setItem('listas', oDados);
                         t.modal({
                             // the url to load for the iframe
