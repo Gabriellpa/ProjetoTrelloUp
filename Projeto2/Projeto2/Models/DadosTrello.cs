@@ -9,6 +9,7 @@ namespace Projeto2.Models
     {
         public DadosTrello() { }
 
+        public string id { get; set; }
         public List<object> backlog { get; set; }
         public List<object> todo { get; set; }
         public List<object> done { get; set; }

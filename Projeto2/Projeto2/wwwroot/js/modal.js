@@ -45,14 +45,14 @@ function addLista(el) {
 function enviar() {
 	debugger;
 	//Ainda precisa tratar os dados de todos pois existe arrays dentro de arrays.
-	var data = { backlog: backlog, todo: todo, done: done}; //{ backlog: backlog, todo: todo, done: done};
+	var fat = { id: "aa", backlog: backlog };//, todo: todo, done: done}; //{ backlog: backlog, todo: todo, done: done};
 	console.log(data);
 	var data = { card: oListas[0] };
 	// {empresa: empresa, datainicial: datainicial, datafinal: datafinal},
 	let url = 'DataTrello';
 	$.ajax({
 		type: 'POST',
-		data: JSON.stringify(oListas[0] ),
+		data: JSON.stringify(fat),
 		url: url,
 		contentType: 'application/json'
 	}).done(function (res) {
