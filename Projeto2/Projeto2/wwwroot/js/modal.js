@@ -45,19 +45,29 @@ function addLista(el) {
 function enviar() {
 	debugger;
 	//Ainda precisa tratar os dados de todos pois existe arrays dentro de arrays.
-	var data = JSON.stringify({ backlog: backlog, todo: todo, done: done}); //{ backlog: backlog, todo: todo, done: done};
+	var data = { backlog: backlog, todo: todo, done: done}; //{ backlog: backlog, todo: todo, done: done};
 	console.log(data);
+	var data = { card: oListas[0] };
 	// {empresa: empresa, datainicial: datainicial, datafinal: datafinal},
-
 	let url = 'DataTrello';
 	$.ajax({
-		type: "POST",
-		data: JSON.stringify({ DadosTrello: data }),
+		type: 'POST',
+		data: JSON.stringify(oListas[0] ),
 		url: url,
-		dataType: 'json',
-		contentType: "application/json"
+		contentType: 'application/json'
 	}).done(function (res) {
-		console.log('enviou');
-	});
+		console.log('enviou' , res);
+		});
+
+	//var aaa = { folha: 'afdfr' }
+	//let urls = 'teste';
+	//$.ajax({
+	//	type: "POST",
+	//	data: JSON.stringify({ card: aaa }),
+	//	url: urls,
+	//	contentType: "application/json"
+	//}).done(function (res) {
+	//	console.log('enviou', res);
+	//});
 
 }

@@ -7,13 +7,11 @@ namespace Projeto2.Models
 {
     public class DadosTrello
     {
-        
-        private string backlog;
-        private string todo;
-        private string done;
+        public DadosTrello() { }
 
-        public string Backlog { get => backlog; set => backlog = value; }
-        public string Todo { get => todo; set => todo = value; }
-        public string Done { get => done; set => done = value; }
+        public List<object> backlog { get; set; }
+        public List<object> todo { get; set; }
+        public List<object> done { get; set; }
+
     }
 }

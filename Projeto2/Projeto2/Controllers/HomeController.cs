@@ -5,9 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Projeto2.Models;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace Projeto2.Controllers
 {
+    [Produces("application/json")]
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -26,10 +29,23 @@ namespace Projeto2.Controllers
         }
 
         [HttpPost]
-        public void DataTrello([FromBody] DadosTrello dados)
+        public Board DataTrello([FromBody] Board dados)
         {
             //Retornando tudo null;
-            DadosTrello dadosTrello = dados;
+            Board dadosTrello = dados;
+
+            return dadosTrello;
+        }
+
+        [HttpPost]
+        public void DataTrellos([FromBody] JObject dados)
+        {
+            //Retornando tudo null;
+            string dadosTrello = null;
+
+           // return dadosTrello;
         }
     }
+
+
 }
