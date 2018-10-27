@@ -29,12 +29,12 @@ namespace Projeto2.Controllers
         }
 
         [HttpPost]
-        public DadosTrello DataTrello([FromBody] DadosTrello dados)
+        public DadosTrello Post([FromBody] DadosTrello dadosTrello)
         {
             //Retornando tudo null;
-            DadosTrello dadosTrello = dados;
+            DadosTrello dataPost = dadosTrello;
 
-            return dadosTrello;
+            return dataPost;
         }
 
         [HttpPost]

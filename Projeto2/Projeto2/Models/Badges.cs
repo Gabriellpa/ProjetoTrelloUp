@@ -7,18 +7,17 @@ namespace Projeto2.Models
 {
     public class Badges
     {
-        public Badges() { }
-        public int attachments { get; set; }
-        public List<string> attachmentsByType { get; set; }
-        public int checkItems { get; set; }
-        public int checkItemsChecked { get; set; }
-        public int comments { get; set; }
-        public bool description { get; set; }
-        public string due { get; set; }
-        public bool dueComplete { get; set; }
-        public string fogbugz { get; set; }
-        public bool subscribed { get; set; }
-        public bool viewingMemberVoted { get; set; }
-        public int votes { get; set; }
+        public object attachments { get; set; }
+        public List<object> attachmentsByType { get; set; }
+        public object checkItems { get; set; }
+        public object checkItemsChecked { get; set; }
+        public object comments { get; set; }
+        public object description { get; set; }
+        public object due { get; set; }
+        public object dueComplete { get; set; }
+        public object fogbugz { get; set; }
+        public object subscribed { get; set; }
+        public object viewingMemberVoted { get; set; }
+        public object votes { get; set; }
     }
 }

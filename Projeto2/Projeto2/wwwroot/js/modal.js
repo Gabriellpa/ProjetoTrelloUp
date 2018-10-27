@@ -43,31 +43,17 @@ function addLista(el) {
 }
 
 function enviar() {
-	debugger;
 	//Ainda precisa tratar os dados de todos pois existe arrays dentro de arrays.
-	var fat = { id: "aa", backlog: backlog };//, todo: todo, done: done}; //{ backlog: backlog, todo: todo, done: done};
-	console.log(data);
-	var data = { card: oListas[0] };
-	// {empresa: empresa, datainicial: datainicial, datafinal: datafinal},
-	let url = 'DataTrello';
+	var dados = {backlog: backlog , todo: todo, done: done};
+
+	let url = 'Post';
 	$.ajax({
 		type: 'POST',
-		data: JSON.stringify(fat),
+		data: JSON.stringify(dados),
 		url: url,
 		contentType: 'application/json'
 	}).done(function (res) {
 		console.log('enviou' , res);
 		});
-
-	//var aaa = { folha: 'afdfr' }
-	//let urls = 'teste';
-	//$.ajax({
-	//	type: "POST",
-	//	data: JSON.stringify({ card: aaa }),
-	//	url: urls,
-	//	contentType: "application/json"
-	//}).done(function (res) {
-	//	console.log('enviou', res);
-	//});
 
 }

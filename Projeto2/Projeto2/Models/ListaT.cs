@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 
 namespace Projeto2.Models
 {
-    public class Board
+    public class ListaT
     {
-        public Board() { }
+        public ListaT()
+        {
+            cards = new List<Card>();
+        }
         public string id { get; set; }
         public string name { get; set; }
-        public List<object> cards {get; set;}
+        public List<Card> cards { get; set; }
     }
-
 }
