@@ -13,7 +13,20 @@
 }
 
 li:hover {
-    background: dodgerblue;
+    cursor:pointer;
+    color: grey;      
+    
+}
+
+li {
+    margin: 3px 0px 0px 0px;
     color: black;
-    width: 15%;
+}
+
+.containerLista{
+    margin-left:250px;
+    margin-top:50px;
+}
+.lista {
+    list-style-type: upper-roman;
 }

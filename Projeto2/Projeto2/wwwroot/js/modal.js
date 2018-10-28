@@ -9,7 +9,7 @@ function popularCampos(div) {
 
     corpo = document.getElementById(div);
     corpo.style.display = "block";
-    corpo.getElementsByClassName('titulo')[0].innerHTML = "Selecione lista para " + div;
+    corpo.getElementsByClassName('titulo')[0].innerHTML = "Selecione lista para " + div.toUpperCase();
 
 
     var lista = new Array();
@@ -21,7 +21,8 @@ function popularCampos(div) {
     }
 
 
-    var ul = newElement('ul');
+    var ul = newElement('ul');    
+    ul.classList.add("lista");
     for (let i = 0; i < oListas.length; i++) {
 
         if (lista.indexOf(oListas[i].id) < 0) {
@@ -54,10 +55,10 @@ function newElement(tipo) {
 }
 
 
-function finalizarEscolhas() {
-    debugger;
+function finalizarEscolhas() {    
     addLista();
     enviar();
+    limparLista();
 
 }
 
@@ -105,7 +106,8 @@ function enviar() {
 		url: url,
 		contentType: 'application/json'
 	}).done(function (res) {
-		console.log('enviou' , res);
+        console.log('enviou', res);
+        
 		});
 
 }

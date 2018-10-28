@@ -35,8 +35,8 @@
                                 url: 'https://google.com',
                                 alt: 'Left',
                                 position: 'left'
-                            }],
-                        })
+                            }]
+                        });
                     });
             }
         }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Projeto2.Models;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Projeto2.Services;
 
 namespace Projeto2.Controllers
 {
@@ -32,7 +33,12 @@ namespace Projeto2.Controllers
         public DadosTrello Post([FromBody] DadosTrello dadosTrello)
         {            
             DadosTrello dataPost = dadosTrello;
-
+            ArquivoService service = new ArquivoService();
+            
+            service.CriarPlanilha(dadosTrello.backlog);
+            service.CriarPlanilha(dadosTrello.todo);
+            service.CriarPlanilha(dadosTrello.done);
+          
             return dataPost;
         }
 
