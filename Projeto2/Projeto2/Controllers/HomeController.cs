@@ -30,8 +30,7 @@ namespace Projeto2.Controllers
 
         [HttpPost]
         public DadosTrello Post([FromBody] DadosTrello dadosTrello)
-        {
-            //Retornando tudo null;
+        {            
             DadosTrello dataPost = dadosTrello;
 
             return dataPost;

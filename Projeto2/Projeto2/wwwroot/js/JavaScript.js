@@ -9,7 +9,11 @@
 					.then(function (lists) {
 
                         let oDados = JSON.stringify(lists, null, 2);
-                        localStorage.setItem('listas', oDados);
+                        localStorage.setItem('listas', oDados);                        
+                        localStorage.setItem('listasEscolhidasbackLog', undefined);
+                        localStorage.setItem('listasEscolhidastoDo', undefined);
+                        localStorage.setItem('listasEscolhidasdone', undefined);
+                        localStorage.setItem('listaUsadas', undefined);
                         t.modal({
                             // the url to load for the iframe
                             url: '/Home/Listas',

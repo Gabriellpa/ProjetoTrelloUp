@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
     <link rel="stylesheet" href="~/css/modal.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Fica aqui por questões de escopo -->
@@ -10,12 +11,28 @@
     <script src="~/js/modal.js"></script>
 </head>
 <body>
-    <div id="divModalAtiv">
-        
+    <div id="backLog" style="display: none;">
+        <p class="titulo"></p>
+        <div id="backLogList"></div>
+        <button onclick="limparLista();">Limpar</button>
+        <button onclick="selectedList('backLog');">Proximo</button>
     </div>
-	<button onclick="enviar()" >enviar</button>
+    <div id="toDo" style="display: none;">
+        <p class="titulo"></p>
+        <div id="toDoList"></div>
+        <button onclick="voltarLista('toDo','backLog');">Voltar</button>
+        <button onclick="selectedList('toDo');">Proximo</button>
+    </div>
+
+    <div id="done" style="display: none;">
+        <p class="titulo"></p>
+        <div id="doneList"></div>
+        <button onclick="voltarLista('done','toDo');">Voltar</button>
+        <button onclick="selectedList('done');">Enviar</button>
+    </div>
+
     <script type="text/javascript">
-		popularCampos();
+        popularCampos('backLog');
 
     </script>
 </body>
