@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+
 namespace Projeto2.Services
 {
     public class TrelloService
@@ -38,7 +40,7 @@ namespace Projeto2.Services
                     
                     foreach (var d in dataObjects)
                     {
-
+                        var a = JsonConvert.DeserializeObject(d.ToString());
                     }
                 }
             }

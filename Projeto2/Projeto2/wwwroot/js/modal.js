@@ -77,28 +77,28 @@ function addLista() {
         let oLista = oListas.filter(function (i, n) {
             return i.id === backlogList[j];
         });
-        backlog.push(oLista);
+        backlog.push(oLista.id);
     }	
 
     for (let j in toDoList) {
         let oLista = oListas.filter(function (i, n) {
             return i.id === toDoList[j];
         });
-        todo.push(oLista);
+        todo.push(oLista.id);
     }	
 
     for (let j in doneList) {
         let oLista = oListas.filter(function (i, n) {
             return i.id === doneList[j];
         });
-        done.push(oLista);
+        done.push(oLista.id);
     }	
 }
 
 function enviar() {
 	//Ainda precisa tratar os dados de todos pois existe arrays dentro de arrays.
 	var dados = {backlog: backlog , todo: todo, done: done};
-
+	debugger;
 	let url = 'Post';
 	$.ajax({
 		type: 'POST',
