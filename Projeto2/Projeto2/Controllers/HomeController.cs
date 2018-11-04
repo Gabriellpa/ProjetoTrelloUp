@@ -8,12 +8,12 @@ using Projeto2.Models;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Projeto2.Services;
-
+//heroku "https://projeto2trello.herokuapp.com/"
 namespace Projeto2.Controllers
 {
     [Produces("application/json")]
     public class HomeController : Controller
-    {
+    {       
         public IActionResult Index()
         {
             return View();
@@ -33,11 +33,13 @@ namespace Projeto2.Controllers
         public DadosTrello Post([FromBody] DadosTrello dadosTrello)
         {            
             DadosTrello dataPost = dadosTrello;
-            ArquivoService service = new ArquivoService();
+            TrelloService service = new TrelloService();
+            string retorno = service.GetCards("5bd4d53a98625a2569740edb"); // seria oq viria da modal para cada lista que o cara escolher
+            //  ArquivoService service = new ArquivoService();
             
-            service.CriarPlanilha(dadosTrello.backlog);
-            service.CriarPlanilha(dadosTrello.todo);
-            service.CriarPlanilha(dadosTrello.done);
+            //service.CriarPlanilha(dadosTrello.backlog);
+            //service.CriarPlanilha(dadosTrello.todo);
+            //service.CriarPlanilha(dadosTrello.done);
           
             return dataPost;
         }

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Projeto2.Models
-{
+{    
     public class Card
     {
         public Card()
         {
             members = new List<object>();
-        }
+        }        
         public string id { get; set; }
         public string name { get; set; }
         public string desc { get; set; }
