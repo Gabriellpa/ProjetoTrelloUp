@@ -77,28 +77,28 @@ function addLista() {
         let oLista = oListas.filter(function (i, n) {
             return i.id === backlogList[j];
         });
-        backlog.push(oLista.id);
+        backlog.push(oLista[0].id);
     }	
 
     for (let j in toDoList) {
         let oLista = oListas.filter(function (i, n) {
             return i.id === toDoList[j];
         });
-        todo.push(oLista.id);
+        todo.push(oLista[0].id);
     }	
 
     for (let j in doneList) {
         let oLista = oListas.filter(function (i, n) {
             return i.id === doneList[j];
         });
-        done.push(oLista.id);
+        done.push(oLista[0].id);
     }	
 }
 
 function enviar() {
 	//Ainda precisa tratar os dados de todos pois existe arrays dentro de arrays.
-	var dados = {backlog: backlog , todo: todo, done: done};
-	debugger;
+	let dados = {backlog: backlog , todo: todo, done: done};
+
 	let url = 'Post';
 	$.ajax({
 		type: 'POST',
@@ -107,9 +107,7 @@ function enviar() {
 		contentType: 'application/json'
 	}).done(function (res) {
         console.log('enviou', res);
-        
 		});
-
 }
 
 function voltarLista(listaAtual, listaAnterior) {
@@ -145,7 +143,10 @@ function limparLista() {
     localStorage.setItem('listasEscolhidasbackLog', undefined);    
     localStorage.setItem('listasEscolhidastoDo', undefined);
     localStorage.setItem('listasEscolhidasdone', undefined);
-    localStorage.setItem('listaUsadas', undefined);
+	localStorage.setItem('listaUsadas', undefined);
+	backlog.length = 0;
+	todo.length = 0;
+	done.length = 0;
     popularCampos('backLog');
 }
 

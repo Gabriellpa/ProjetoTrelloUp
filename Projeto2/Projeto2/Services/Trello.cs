@@ -23,10 +23,11 @@ namespace Projeto2.Services
             urlParameters = string.Format("?key={0}&token={1}", chave, token);
         }
         
-        public string GetCards(string idLista)
+        public List<Card> GetCards(string idLista)
         {
             string lista = string.Format("lists/{0}/cards", idLista) + urlParameters;
-            
+            List<Card> listaRetorno = new List<Card>();
+
             using (HttpClient client = new HttpClient()) {
 
                 client.BaseAddress = new Uri(URL);
@@ -35,18 +36,18 @@ namespace Projeto2.Services
                 
                 HttpResponseMessage response = client.GetAsync(lista).Result;  
                 if (response.IsSuccessStatusCode)
-                {
-                    var dataObjects = response.Content.ReadAsStringAsync().Result;
+                {   
+                    string dataObjects = response.Content.ReadAsStringAsync().Result;
                     
-                    foreach (var d in dataObjects)
-                    {
-                        var a = JsonConvert.DeserializeObject(d.ToString());
-                    }
+                   // foreach (var d in dataObjects)
+                   // {
+                        listaRetorno = JsonConvert.DeserializeObject<List<Card>>(dataObjects);
+                   // }
                 }
             }
-           
-            
-            return string.Empty;
+
+
+            return listaRetorno;
         }        
     }
 }

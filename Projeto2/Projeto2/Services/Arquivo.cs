@@ -36,9 +36,9 @@ namespace Projeto2.Services
 
         public void ContabilizarAtividades (DadosTrello dados)
         {
-            int qtdBacklog = dados.backlog[0][0].cards.Count;
-            int qtdTodo = dados.todo[0][0].cards.Count;
-            int qtdDone= dados.done[0][0].cards.Count;
+           // int qtdBacklog = dados.backlog[0][0].cards.Count;
+          //  int qtdTodo = dados.todo[0][0].cards.Count;
+        //    int qtdDone= dados.done[0][0].cards.Count;
 
         }
     }
