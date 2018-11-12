@@ -11,29 +11,39 @@
     <script src="~/js/modal.js"></script>
 </head>
 <body>
-    <div id="backLog" class="containerLista" style="display: none;">
-        <p class="titulo"></p>
-        <div id="backLogList"></div>
-        <button onclick="limparLista();">Limpar</button>
-        <button onclick="selectedList('backLog');">Proximo</button>
-    </div>
-    <div id="toDo" class="containerLista" style="display: none;">
-        <p class="titulo"></p>
-        <div id="toDoList"></div>
-        <button onclick="voltarLista('toDo','backLog');">Voltar</button>
-        <button onclick="selectedList('toDo');">Proximo</button>
-    </div>
+    @if (ViewBag.JaEscolheu == false)
+    {
+        <div id="backLog" class="containerLista" style="display: none;">
+            <p class="titulo"></p>
+            <div id="backLogList"></div>
+            <button onclick="limparLista();">Limpar</button>
+            <button onclick="selectedList('backLog');">Proximo</button>
+        </div>
+        <div id="toDo" class="containerLista" style="display: none;">
+            <p class="titulo"></p>
+            <div id="toDoList"></div>
+            <button onclick="voltarLista('toDo','backLog');">Voltar</button>
+            <button onclick="selectedList('toDo');">Proximo</button>
+        </div>
 
-    <div id="done" class="containerLista" style="display: none;">
-        <p class="titulo"></p>
-        <div id="doneList"></div>
-        <button onclick="voltarLista('done','toDo');">Voltar</button>
-        <button onclick="selectedList('done');">Enviar</button>
-    </div>
+        <div id="done" class="containerLista" style="display: none;">
+            <p class="titulo"></p>
+            <div id="doneList"></div>
+            <button onclick="voltarLista('done','toDo');">Voltar</button>
+            <button onclick="selectedList('done');">Enviar</button>
+        </div>
+        <script type="text/javascript">
+            popularCampos('backLog');
+        </script>
+    }
+    else
+    {
+        <div class="containerLista" style="color:red">
+            <button onclick="AtualizarPlanilha();">Atualizar</button>
+        </div>
+    }
 
-    <script type="text/javascript">
-        popularCampos('backLog');
 
-    </script>
+
 </body>
 </html>

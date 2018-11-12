@@ -11,8 +11,6 @@ namespace Projeto2.Models
         {
             cards = new List<Card>();
         }
-        public string id { get; set; }
-        public string name { get; set; }
         public List<Card> cards { get; set; }
     }
 }

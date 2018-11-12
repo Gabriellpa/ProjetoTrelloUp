@@ -69,30 +69,46 @@ function addLista() {
     var toDoList = localStorage.getItem('listasEscolhidastoDo');
     var doneList  = localStorage.getItem('listasEscolhidasdone');
 
-    backlogList = backlogList.split(" ");
-    toDoList = toDoList.split(" ");
-    doneList = doneList.split(" ");
+    if (typeof backlogList !== undefined && backlogList !== "undefined") {
+        backlogList = backlogList.split(" ");
 
-    for (let j in backlogList) {
-        let oLista = oListas.filter(function (i, n) {
-            return i.id === backlogList[j];
-        });
-        backlog.push(oLista[0].id);
-    }	
+        for (let j in backlogList) {
+            let oLista = oListas.filter(function (i, n) {
+                return i.id === backlogList[j];
+            });
+            backlog.push(oLista[0].id);
+        }	
+    }
 
-    for (let j in toDoList) {
-        let oLista = oListas.filter(function (i, n) {
-            return i.id === toDoList[j];
-        });
-        todo.push(oLista[0].id);
-    }	
+    if (typeof toDoList !== undefined && toDoList !== "undefined") {
+        toDoList = toDoList.split(" ");
 
-    for (let j in doneList) {
-        let oLista = oListas.filter(function (i, n) {
-            return i.id === doneList[j];
-        });
-        done.push(oLista[0].id);
-    }	
+        for (let j in toDoList) {
+            let oLista = oListas.filter(function (i, n) {
+                return i.id === toDoList[j];
+            });
+            todo.push(oLista[0].id);
+        }	
+    }
+
+    if (typeof doneList !== undefined && doneList !== "undefined") {
+        doneList = doneList.split(" ");
+
+        for (let j in doneList) {
+            let oLista = oListas.filter(function (i, n) {
+                return i.id === doneList[j];
+            });
+            done.push(oLista[0].id);
+        }	
+    }
+
+    
+    
+
+   
+
+
+
 }
 
 function enviar() {
@@ -107,7 +123,8 @@ function enviar() {
 		contentType: 'application/json'
 	}).done(function (res) {
         console.log('enviou', res);
-		});
+        });
+    
 }
 
 function voltarLista(listaAtual, listaAnterior) {
@@ -205,4 +222,16 @@ function selectItem(valueId, listName) {
 
     localStorage.setItem(nomeLista, selecionados);
     localStorage.setItem('listaUsadas', usados);
+}
+
+function AtualizarPlanilha() {
+    let url = 'Atualizar';
+    $.ajax({
+        type: 'PUT',        
+        url: url,
+        contentType: 'application/json'
+    }).done(function (res) {
+        console.log('enviou');
+        });
+    
 }

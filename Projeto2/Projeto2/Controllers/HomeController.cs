@@ -15,12 +15,14 @@ namespace Projeto2.Controllers
     public class HomeController : Controller
     {
         public IActionResult Index()
-        {
+        {           
             return View();
         }
 
         public IActionResult Listas()
         {
+            ArquivoService serviceArq = new ArquivoService();
+            ViewBag.JaEscolheu = serviceArq.EscolheuListas();
             return View();
         }
 
@@ -32,52 +34,21 @@ namespace Projeto2.Controllers
         [HttpPost]
         public DadosTrello Post([FromBody] DadosTrello dadosTrello)
         {
-            List<List<Card>> listaBackLog = new List<List<Card>>();
-            List<List<Card>> listaTodo = new List<List<Card>>();
-            List<List<Card>> listaDone = new List<List<Card>>();
-
+            
+            TrelloService serviceTrello = new TrelloService();            
             DadosTrello dataPost = dadosTrello;
-            TrelloService service = new TrelloService();
-
-            //BackLog
-            foreach (string backlog in dataPost.backlog)
-            {
-                List<Card> retorno = service.GetCards(backlog); // seria oq viria da modal para cada lista que o cara escolher
-                listaBackLog.Add(retorno);
-            }
-
-            //TODO
-            foreach (string backlog in dataPost.todo)
-            {
-                List<Card> retorno = service.GetCards(backlog); // seria oq viria da modal para cada lista que o cara escolher
-                listaTodo.Add(retorno);
-            }
-
-            //DONE
-            foreach (string backlog in dataPost.done)
-            {
-                List<Card> retorno = service.GetCards(backlog); // seria oq viria da modal para cada lista que o cara escolher
-                listaDone.Add(retorno);
-            }
-
-            //Aqui já tem as 3 listas para usar na planilha  
-
-            //  ArquivoService service = new ArquivoService();
-
-            //service.CriarPlanilha(dadosTrello.backlog);
-            //service.CriarPlanilha(dadosTrello.todo);
-            //service.CriarPlanilha(dadosTrello.done);
-
+            ArquivoService serviceArq = new ArquivoService();
+            serviceArq.criarPastaArquivos();
+            serviceArq.salvarIdsLista(dataPost);
+            serviceTrello.TratarDados(dataPost);                        
             return dataPost;
         }
 
-        [HttpPost]
-        public void DataTrellos([FromBody] JObject dados)
+        [HttpPut]
+        public void Atualizar()
         {
-            //Retornando tudo null;
-            string dadosTrello = null;
-
-            // return dadosTrello;
+            TrelloService serviceTrello = new TrelloService();
+            serviceTrello.Robo();
         }
     }
 
