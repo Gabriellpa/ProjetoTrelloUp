@@ -32,7 +32,7 @@ namespace Projeto2.Controllers
         }
 
         [HttpPost]
-        public String Post([FromBody] DadosTrello dadosTrello)
+        public DadosTrello Post([FromBody] DadosTrello dadosTrello)
         {
             
             TrelloService serviceTrello = new TrelloService();            
@@ -41,22 +41,21 @@ namespace Projeto2.Controllers
             serviceArq.criarPastaArquivos();
             serviceArq.salvarIdsLista(dataPost);
             serviceTrello.TratarDados(dataPost);                        
-            return System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory).FullName;
+            return dataPost;
         }
 
         [HttpPut]
-        public String Atualizar()
+        public void Atualizar()
         {
             TrelloService serviceTrello = new TrelloService();
             serviceTrello.Robo();
-            return System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory).FullName;
         }
         
         [HttpPut]
         public String RetornarArquivo()
         {
               ArquivoService serviceArq = new ArquivoService();
-             return serviceArq.RetornarArquivo();
+              return serviceArq.RetornarArquivo();
         }
     }
 
