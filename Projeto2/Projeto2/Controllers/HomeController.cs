@@ -45,10 +45,12 @@ namespace Projeto2.Controllers
         }
 
         [HttpPut]
-        public void Atualizar()
+        public String Atualizar()
         {
-            TrelloService serviceTrello = new TrelloService();
-            serviceTrello.Robo();
+              ArquivoService serviceArq = new ArquivoService();
+              return serviceArq.RetornarArquivo();
+            //TrelloService serviceTrello = new TrelloService();
+            //serviceTrello.Robo();
         }
         
         [HttpPut]
