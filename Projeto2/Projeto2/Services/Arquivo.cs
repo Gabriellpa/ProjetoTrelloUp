@@ -92,7 +92,6 @@ namespace Projeto2.Services
         
         public string RetornarArquivo()
         {
-            this;ArquivoService();
             string nomeArquivo = "teste.csv";
             string arquivo = string.Empty;
             using (StreamReader sw = new StreamReader(PastaArquivos + nomeArquivo))
