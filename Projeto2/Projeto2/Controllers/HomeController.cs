@@ -41,7 +41,7 @@ namespace Projeto2.Controllers
             serviceArq.criarPastaArquivos();
             serviceArq.salvarIdsLista(dataPost);
             serviceTrello.TratarDados(dataPost);                        
-            return Environment.CurrentDirectory;
+            return System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory).FullName;
         }
 
         [HttpPut]
@@ -49,7 +49,7 @@ namespace Projeto2.Controllers
         {
             TrelloService serviceTrello = new TrelloService();
             serviceTrello.Robo();
-            return Environment.CurrentDirectory;
+            return System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory).FullName;
         }
     }
 
