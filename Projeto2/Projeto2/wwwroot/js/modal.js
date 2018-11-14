@@ -232,6 +232,16 @@ function AtualizarPlanilha() {
         contentType: 'application/json'
     }).done(function (res) {
         console.log(res);
-        });
-    
+        }); 
+}
+
+function RetornarPlanilha() {
+    let url = 'RetornarArquivo';
+    $.ajax({
+        type: 'POST',        
+        url: url,
+        contentType: 'application/json'
+    }).done(function (res) {
+        console.log(res);
+        }); 
 }
