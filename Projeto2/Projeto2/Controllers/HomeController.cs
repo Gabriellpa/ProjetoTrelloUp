@@ -32,7 +32,7 @@ namespace Projeto2.Controllers
         }
 
         [HttpPost]
-        public DadosTrello Post([FromBody] DadosTrello dadosTrello)
+        public String Post([FromBody] DadosTrello dadosTrello)
         {
             
             TrelloService serviceTrello = new TrelloService();            
@@ -41,7 +41,7 @@ namespace Projeto2.Controllers
             serviceArq.criarPastaArquivos();
             serviceArq.salvarIdsLista(dataPost);
             serviceTrello.TratarDados(dataPost);                        
-            return dataPost;
+            return Environment.CurrentDirectory;
         }
 
         [HttpPut]
