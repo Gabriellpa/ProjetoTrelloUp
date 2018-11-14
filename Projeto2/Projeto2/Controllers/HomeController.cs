@@ -51,6 +51,13 @@ namespace Projeto2.Controllers
             serviceTrello.Robo();
             return System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory).FullName;
         }
+        
+        [HttpPut]
+        public String RetornarArquivo()
+        {
+              ArquivoService serviceArq = new ArquivoService();
+             return serviceArq.RetornarArquivo();
+        }
     }
 
 
