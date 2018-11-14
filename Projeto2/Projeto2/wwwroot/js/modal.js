@@ -231,7 +231,7 @@ function AtualizarPlanilha() {
         url: url,
         contentType: 'application/json'
     }).done(function (res) {
-        console.log('enviou');
+        console.log(res);
         });
     
 }
