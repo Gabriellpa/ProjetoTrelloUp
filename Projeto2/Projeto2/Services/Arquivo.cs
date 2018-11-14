@@ -89,5 +89,15 @@ namespace Projeto2.Services
             string caminho = Environment.CurrentDirectory + "\\arquivos";
             System.IO.Directory.CreateDirectory(caminho);
         }
+        
+        public string RetornarArquivo()
+        {
+            string arquivo = string.Empty;
+            using (StreamReader sw = new StreamReader(PastaArquivos + nomeArquivo))
+            {
+                arquivo = sw.ReadToEnd().ToString();
+            }   
+            return arquivo;
+        }
     }
 }
