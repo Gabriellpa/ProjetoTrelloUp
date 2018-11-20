@@ -19,4 +19,10 @@
     <None Include="wwwroot\js\JavaScript.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Home\Authsuccess.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -101,14 +101,6 @@ function addLista() {
             done.push(oLista[0].id);
         }	
     }
-
-    
-    
-
-   
-
-
-
 }
 
 function enviar() {
