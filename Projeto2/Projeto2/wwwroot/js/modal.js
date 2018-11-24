@@ -237,3 +237,14 @@ function RetornarPlanilha() {
         console.log(res);
         }); 
 }
+
+function ExportarPlanilha() {
+    let url = 'ExportarArquivo';
+    $.ajax({
+        type: 'GET',
+        url: url,
+        contentType: 'application/json'
+    }).done(function (res) {
+        console.log(res);
+    });
+}

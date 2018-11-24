@@ -11,11 +11,13 @@ namespace Projeto2.Services
     public class ArquivoService
     {
         string PastaArquivos;
+
         public ArquivoService()
         {
             PastaArquivos = Environment.CurrentDirectory+"\\arquivos\\";
 
         }
+
         public void CriarPlanilhaSimples(int qtdCardsBackLog, int qtdCardsTodo, int qtdCardsDone)
         {
             StringBuilder conteudoCsv = new StringBuilder();
@@ -29,6 +31,7 @@ namespace Projeto2.Services
             string caminhoArquivo = PastaArquivos + nomeArquivo;
             File.WriteAllText(caminhoArquivo, conteudoCsv.ToString());            
         }
+
         public void LerArquivo(string arquivo ="teste.csv")
         {
             string caminho = Environment.CurrentDirectory + arquivo;
@@ -75,13 +78,20 @@ namespace Projeto2.Services
                 sw.WriteLine(linha);
             }          
         }
+
         public bool ArquivoSimplesExiste()
         {
             return File.Exists(PastaArquivos + "teste.csv");
         }
+
         public bool EscolheuListas()
         {
             return File.Exists(PastaArquivos + "ids.txt");
+        }
+
+        public bool IdPlanilhaExiste()
+        {
+            return File.Exists(PastaArquivos + "idPlanilha.txt");
         }
 
         public void criarPastaArquivos()
@@ -99,6 +109,29 @@ namespace Projeto2.Services
                 arquivo = sw.ReadToEnd().ToString();
             }   
             return arquivo;
+        }
+
+        public string RetornaCaminhoArquivo(string arquivo = "teste.csv")
+        {
+            return PastaArquivos + arquivo;
+        }
+
+        public void SalvarIdPlanilha(string id)
+        {
+            StringBuilder conteudoTxt = new StringBuilder();
+            conteudoTxt.AppendLine(id);
+            string caminhoArquivo = PastaArquivos + "idPlanilha.txt";
+            File.WriteAllText(caminhoArquivo, conteudoTxt.ToString());
+        }
+
+        public string LerIdPlanilha()
+        {
+            string linha;
+            using (var reader = new StreamReader(PastaArquivos + "idPlanilha.txt"))
+            {                                
+                linha = reader.ReadLine();                 
+            }
+            return linha.Trim();
         }
     }
 }

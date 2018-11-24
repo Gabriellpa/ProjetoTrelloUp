@@ -56,12 +56,10 @@ namespace Projeto2.Controllers
         }
 
         [HttpPut]
-        public String Atualizar()
+        public void Atualizar()
         {
-              ArquivoService serviceArq = new ArquivoService();
-              return serviceArq.RetornarArquivo();
-            //TrelloService serviceTrello = new TrelloService();
-            //serviceTrello.Robo();
+            TrelloService serviceTrello = new TrelloService();
+            serviceTrello.Robo();
         }
         
         [HttpPut]
@@ -69,6 +67,14 @@ namespace Projeto2.Controllers
         {
               ArquivoService serviceArq = new ArquivoService();
               return serviceArq.RetornarArquivo();
+        }
+
+        [HttpGet]
+        public void ExportarArquivo()
+        {
+            GoogleDriveService service = new GoogleDriveService();
+            ArquivoService serviceArq = new ArquivoService();
+            service.exportar(serviceArq.RetornaCaminhoArquivo());
         }
     }
 
