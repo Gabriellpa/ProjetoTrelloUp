@@ -20,8 +20,10 @@ namespace Projeto2.Services
         static string[] Scopes = { DriveService.Scope.DriveFile };
         static string ApplicationName = "TrelloTCC";
         private DriveService service;
+        ArquivoService serviceArq;
         public GoogleDriveService()
         {
+            serviceArq = new ArquivoService();
             UserCredential credential;
             try
             {
@@ -36,8 +38,7 @@ namespace Projeto2.Services
         }
 
         public void exportar(string caminhoArquivo)
-        {
-            ArquivoService serviceArq = new ArquivoService();
+        {             
 
             if (serviceArq.IdPlanilhaExiste())
             {
@@ -68,10 +69,10 @@ namespace Projeto2.Services
         {
             Google.Apis.Auth.OAuth2.UserCredential credenciais;
 
-            using (var stream = new System.IO.FileStream("client_secret.json", System.IO.FileMode.Open, System.IO.FileAccess.Read))
+            using (var stream = new System.IO.FileStream(serviceArq.RetornaCaminhoArquivo("client_secret.json"), System.IO.FileMode.Open, System.IO.FileAccess.Read))
             {
                 var diretorioAtual = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                var diretorioCredenciais = System.IO.Path.Combine(diretorioAtual, "credential");
+                var diretorioCredenciais = serviceArq.RetornaCaminhoArquivo("credential");
 
                 credenciais = Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker.AuthorizeAsync(
                     Google.Apis.Auth.OAuth2.GoogleClientSecrets.Load(stream).Secrets,

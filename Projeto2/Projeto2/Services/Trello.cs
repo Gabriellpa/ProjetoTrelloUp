@@ -69,10 +69,7 @@ namespace Projeto2.Services
                     string dataObjects = response.Content.ReadAsStringAsync().Result;
                     card = JsonConvert.DeserializeObject<Card>(dataObjects);
                 }
-            }
-
-            
-            serviceTeste.LerArquivo();
+            }                        
 
             return card;
         }
